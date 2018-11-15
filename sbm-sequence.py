@@ -21,8 +21,7 @@ def scan(seq, stop_condition):
 
 @app.route('/server', methods=['POST'])
 def find_sbm_api():
-    content = request.json['seq']
-    return 'Result: {}\n'.format(find_sbm(content))
+    return 'Result: {}\n'.format(find_sbm(request.json['seq']))
 
 
 if __name__ == '__main__':
