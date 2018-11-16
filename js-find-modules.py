@@ -18,10 +18,11 @@ def parse_file(file_name):
 
 def parse_folder_files(folder):
     files = [os.path.join(folder, f) for f in os.listdir(folder) if f.endswith(".js")]
-    return [parse_file(x) for x in files]
+    result = [parse_file(x) for x in files]
+    return set([item for sublist in result for item in sublist])
 
 
 if __name__ == '__main__':
     path = '/Users/dimastatz/Documents/dev/sit/white-source-quiz/'
-    result = parse_folder_files(path)
-    print(result)
+    print(parse_folder_files(path))
+
