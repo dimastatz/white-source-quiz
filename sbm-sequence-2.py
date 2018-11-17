@@ -19,11 +19,22 @@ def scan_for_trend(seq, min_n=None, max_n=None):
         return True
 
     if not min_n or seq[0][0] <= min_n[0]:
-        return scan_for_trend(seq[1:], seq[0], max_n)
+        return scan_for_trend(seq[1:], seq[0])
     elif not max_n or seq[0][0] >= max_n[0]:
         return scan_for_trend(seq[1:], min_n, seq[0])
     else:
         return scan_for_trend(seq[1:], min_n, max_n)
+
+
+print(find_sbm([7, 8, 1, 2, 2]))
+print(find_sbm([7, 8, 1, 3, 2]))
+print(find_sbm([7, 9, 1, 2, 8]))
+
+print(find_sbm([1, 2, 3]))
+print(find_sbm([1, 2, 3, 2]))
+print(find_sbm([1, 2, 3, 7]))
+print(find_sbm([4, 1, 7, 8, 7, 2]))
+print(find_sbm([7, 2, 2, 3, 1, 2, 1, 2, 3, 7]))
 
 
 @app.route('/server', methods=['POST'])
