@@ -7,16 +7,23 @@ def find_sbm(seq):
     return scan_for_trend(lst)  # scan O(n)
 
 
+def is_stop_cond(min_n, seq, max_n):
+    return min_n and max_n and max_n[0] > seq[0][0] > min_n[0] \
+           and min_n[1] != seq[0][1] and max_n != seq[0][1] and max_n[1] != min_n[1]
+
+
 def scan_for_trend(seq, min_n=None, max_n=None):
     if not seq:
         return False
-    elif min_n is not None and max_n is not None and max_n > seq[0][0]:
+    elif is_stop_cond(min_n, seq, max_n):
         return True
 
-    if min_n is None or seq[0][0] < min_n:
-        return scan_for_trend(seq[1:], seq[0][0], max_n)
-    elif max_n is None or seq[0][0] > max_n:
-        return scan_for_trend(seq[1:], min_n, seq[0][0])
+    if not min_n or seq[0][0] <= min_n[0]:
+        return scan_for_trend(seq[1:], seq[0], max_n)
+    elif not max_n or seq[0][0] >= max_n[0]:
+        return scan_for_trend(seq[1:], min_n, seq[0])
+    else:
+        return scan_for_trend(seq[1:], min_n, max_n)
 
 
 @app.route('/server', methods=['POST'])
