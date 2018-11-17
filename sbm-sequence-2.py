@@ -26,17 +26,6 @@ def scan_for_trend(seq, min_n=None, max_n=None):
         return scan_for_trend(seq[1:], min_n, max_n)
 
 
-print(find_sbm([7, 8, 1, 2, 2]))
-print(find_sbm([7, 8, 1, 3, 2]))
-print(find_sbm([7, 9, 1, 2, 8]))
-
-print(find_sbm([1, 2, 3]))
-print(find_sbm([1, 2, 3, 2]))
-print(find_sbm([1, 2, 3, 7]))
-print(find_sbm([4, 1, 7, 8, 7, 2]))
-print(find_sbm([7, 2, 2, 3, 1, 2, 1, 2, 3, 7]))
-
-
 @app.route('/server', methods=['POST'])
 def find_sbm_api():
     return 'Result: {}\n'.format(find_sbm(request.json['seq']))
