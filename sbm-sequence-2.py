@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 
 def find_sbm(seq):
-    lst = sorted(enumerate(seq), key=lambda x: x[1])  # sort O(n*log(n))
+    lst = sorted(enumerate(seq), key=lambda x: (x[1], -x[0]))  # sort O(n*log(n))
     return scan(lst)  # scan O(n)
 
 
@@ -15,14 +15,7 @@ def scan(seq):
     return scan(seq[1:])
 
 
-@app.route('/server', methods=['POST'])
-def find_sbm_api():
-    return 'Result: {}\n'.format(find_sbm(request.json['seq']))
-
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
-
+print(find_sbm([8, 10, 9, 8]))
 
 # print(find_sbm([7, 8, 1, 2, 2]))
 # print(find_sbm([7, 8, 1, 3, 2]))
