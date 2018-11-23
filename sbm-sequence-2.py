@@ -30,15 +30,15 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
 
 
-print(find_sbm([8, 10, 9, 8]))
-print(find_sbm([7, 8, 1, 2, 2]))
-print(find_sbm([7, 8, 1, 3, 2]))
-print(find_sbm([7, 9, 1, 2, 8]))
-print(find_sbm([1, 2, 3]))
-print(find_sbm([1, 2, 3, 2]))
-print(find_sbm([1, 2, 3, 7]))
-print(find_sbm([4, 1, 7, 8, 7, 2]))
-print(find_sbm([7, 2, 2, 3, 1, 2, 1, 2, 3, 7]))
-print(find_sbm([1, 2, 2, 4, -11, 1, 5, 1, 5, 7, 7, 10, 11, 12, 40, -10, -5]))
+# print(find_sbm([8, 10, 9, 8]))
+# print(find_sbm([7, 8, 1, 2, 2]))
+# print(find_sbm([7, 8, 1, 3, 2]))
+# print(find_sbm([7, 9, 1, 2, 8]))
+# print(find_sbm([1, 2, 3]))
+# print(find_sbm([1, 2, 3, 2]))
+# print(find_sbm([1, 2, 3, 7]))
+# print(find_sbm([4, 1, 7, 8, 7, 2]))
+# print(find_sbm([7, 2, 2, 3, 1, 2, 1, 2, 3, 7]))
+# print(find_sbm([1, 2, 2, 4, -11, 1, 5, 1, 5, 7, 7, 10, 11, 12, 40, -10, -5]))
 
 
